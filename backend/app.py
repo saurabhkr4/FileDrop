@@ -13,12 +13,11 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 
 
 # Allowed file extensions
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'json'}
 
-# Initialize database
 db = SQLAlchemy(app)
 
 # Create uploads directory if it doesn't exist
@@ -46,27 +45,23 @@ class File(db.Model):
             'updated_at': self.updated_at.isoformat()
         }
 
-# Helper function to check allowed files
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # API Routes
 @app.route('/api/files', methods=['GET'])
 def get_files():
-    """Get list of all files"""
     files = File.query.order_by(File.created_at.desc()).all()
     return jsonify([file.to_dict() for file in files])
 
 @app.route('/api/files/upload', methods=['POST'])
 def upload_file():
     """Upload a file"""
-    # Check if file is in request
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
     
     file = request.files['file']
     
-    # Check if file is selected
     if file.filename == '':
         return jsonify({'error': 'No file selected'}), 400
     

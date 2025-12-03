@@ -1,4 +1,4 @@
-# Dropbox Clone - File Storage Application
+# FileDrop - File Storage Application
 
 A simplified Dropbox-like web application for uploading and downloading files.
 
