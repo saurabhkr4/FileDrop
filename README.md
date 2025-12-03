@@ -37,6 +37,7 @@ Compiled successfully!
 You can now view this in the browser.
 
   Local:            http://localhost:3000
+```
 
-<img width="1597" height="808" alt="image" src="https://github.com/user-attachments/assets/faffc9e1-72e7-4d36-aa2c-9b2ecac48149" />
+<img width="1597" height="808" alt="image" src="https://github.com/user-attachments/assets/9bc7b7f4-ce5b-4215-b621-fc1522e062c4" />
 
