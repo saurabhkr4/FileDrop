@@ -12,10 +12,3 @@ A simplified Dropbox-like web application for uploading and downloading files.
 ## Tech Stack
 - **Backend**: Python Flask, SQLite
 - **Frontend**: React, Material-UI
-
-## Setup Instructions
-
-### Backend Setup
-1. Navigate to backend directory:
-   ```bash
-   cd backend
