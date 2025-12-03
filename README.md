@@ -1,9 +1,9 @@
 These are the commands to clone and run in your system:
 
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/dropbox-clone.git
+git clone https://github.com/YOUR_USERNAME/dropbox-clone.git](https://github.com/saurabhkr4/FileDrop/
 
-cd dropbox-clone
+cd FileDrop
 
 # Setup backend
 cd backend <br>
